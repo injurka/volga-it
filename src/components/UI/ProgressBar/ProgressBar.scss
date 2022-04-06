@@ -1,0 +1,28 @@
+.progress-bar {
+  position: relative;
+  background-color: var(--progress-bar-bg);
+  width: 100%;
+  transition: width cubic-bezier(0.23, 1, 0.32, 1);
+
+  height: 0;
+
+  &.isShow {
+    min-height: var(--progess-bar-height);
+    transition: opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  transition: opacity 0.2s ease-out;
+
+  &__inner {
+    position: absolute;
+    min-height: var(--progess-bar-height);
+    left: 0;
+    top: 0;
+    background: var(--progress-bar-gradient);
+    border-radius: 0 5px 5px 0;
+    transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &.isEnd {
+      border-radius: 0px;
+    }
+  }
+}

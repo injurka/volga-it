@@ -1,0 +1,26 @@
+.image {
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+    opacity: 1;
+  }
+
+  &.isLoading {
+    border-radius: 10px;
+    //? need it!?
+    // @include placeholder;
+
+    .image {
+      &__img {
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+      }
+    }
+  }
+}
